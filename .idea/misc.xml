@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Piglets/AndroidStudioProjects/EmployeeDirectory/app/src/main/res/layout/employee_container.xml" value="0.17291666666666666" />
+        <entry key="..\:/Users/Piglets/AndroidStudioProjects/EmployeeDirectory/app/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Piglets/AndroidStudioProjects/EmployeeDirectory/app/src/main/res/layout/employee_container.xml" value="0.1" />
       </map>
     </option>
   </component>

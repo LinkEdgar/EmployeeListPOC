@@ -16,6 +16,7 @@
 
 
         <ImageView
+            android:src="@mipmap/ic_launcher_round"
             android:id="@+id/imageView"
             android:layout_width="0dp"
             android:layout_height="@dimen/employee_image_height"
@@ -25,6 +26,7 @@
             tools:src="@mipmap/ic_launcher_round" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:text="@{employee.name}"
             android:id="@+id/employee_name"
             tools:text="Employee Name"
             android:textAlignment="center"
@@ -36,6 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:text="@{employee.phoneNumber}"
             android:id="@+id/phone_number"
             android:layout_margin="@dimen/margin_16"
             android:layout_width="0dp"
@@ -48,6 +51,7 @@
             tools:text="Phone Number" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:text="@{employee.biography}"
             android:id="@+id/biography"
             android:layout_margin="@dimen/margin_16"
             android:layout_width="0dp"
