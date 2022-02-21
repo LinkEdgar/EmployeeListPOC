@@ -1,7 +1,8 @@
-package com.example.employeedirectory
+package com.example.employeedirectory.employee.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.employeedirectory.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

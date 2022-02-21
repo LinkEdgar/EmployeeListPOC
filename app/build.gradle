@@ -8,6 +8,8 @@ kapt {
     correctErrorTypes = true
 }
 
+apply plugin: 'dagger.hilt.android.plugin'
+
 
 android {
     compileSdk 31

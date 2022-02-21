@@ -1,4 +1,4 @@
-package com.example.employeedirectory.employee.ui
+package com.example.employeedirectory
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
