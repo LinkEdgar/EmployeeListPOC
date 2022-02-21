@@ -17,6 +17,7 @@
 
         <ImageView
             android:id="@+id/imageView"
+            setSrc="@{employee.photo_url_large}"
             android:layout_width="0dp"
             android:layout_height="@dimen/employee_image_height"
             app:layout_constraintEnd_toEndOf="parent"

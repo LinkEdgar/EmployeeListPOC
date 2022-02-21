@@ -1,9 +1,9 @@
+package com.example.employeedirectory
+
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
-import com.example.employeedirectory.R
-
 
 @BindingAdapter("setSrc")
 fun loadImage(view: ImageView, imageUrl: String) {
