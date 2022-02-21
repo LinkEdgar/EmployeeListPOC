@@ -1,3 +1,3 @@
 package com.example.employeedirectory.employee.models
 
-data class Employee(var name : String)
+data class Employee(val name : String, val uuid : String, val phoneNumber : String, val biography : String)
