@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setUi()
         observeEmployees()
     }
@@ -46,6 +45,9 @@ class MainActivity : AppCompatActivity() {
     private fun setUi() {
         adapter = EmployeeAdapter()
         binding.recycler.adapter = adapter
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.loadEmployees(true)
+        }
     }
 
 
@@ -55,10 +57,15 @@ class MainActivity : AppCompatActivity() {
                 viewModel.loadEmployees()
                 viewModel.observeEmployees().collect { resource ->
                     when (resource) {
-                        is Resource.Error -> { setErrorMessage() }
+                        is Resource.Error -> {
+                            setProgressBar(false)
+                            setErrorMessage(resource.errorMessage)
+                        }
                         is Resource.Loading -> { setProgressBar(true) }
                         is Resource.Success -> {
+                            binding.swipeRefresh.isRefreshing = false
                             setProgressBar(false)
+                            setErrorMessage(false)
                             setEmployeeList(resource.data)
                         }
                         is Resource.Uninitiated -> {}
@@ -76,8 +83,13 @@ class MainActivity : AppCompatActivity() {
         binding.progressbar.visibility = if (shouldShow) View.VISIBLE else View.GONE
     }
 
-    private fun setErrorMessage() {
+    private fun setErrorMessage(shouldShow : Boolean) {
+        binding.errorMessage.visibility = if (shouldShow) View.VISIBLE else View.GONE
+    }
 
+    private fun setErrorMessage(errorMessage : String) {
+        setErrorMessage(true)
+        binding.errorMessage.text = errorMessage
     }
 
 }

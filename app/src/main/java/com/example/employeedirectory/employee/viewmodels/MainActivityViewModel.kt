@@ -18,7 +18,7 @@ class MainActivityViewModel @Inject constructor(
 
     fun observeEmployees() = employeeRepo.employeesFlow()
 
-    fun loadEmployees() {
-        viewModelScope.launch(ioDispatcher) { employeeRepo.getEmployees() }
+    fun loadEmployees(isRefresh : Boolean = false) {
+        viewModelScope.launch(ioDispatcher) { employeeRepo.getEmployees(isRefresh) }
     }
 }

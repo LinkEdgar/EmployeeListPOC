@@ -17,7 +17,17 @@ class EmployeeRepository @Inject constructor(
 
     fun employeesFlow() : StateFlow<Resource<List<Employee>>> = _employees
 
-    suspend fun getEmployees() {
+    suspend fun getEmployees(isRefresh : Boolean = false) {
+        if (isRefresh || !employeesCacheAvailable()) {
+            fetchEmployeesFromNetwork()
+        }
+    }
+
+    private fun employeesCacheAvailable() : Boolean {
+        return _employees.value is Resource.Success // already successfully fetched employee
+    }
+
+    private suspend fun fetchEmployeesFromNetwork() {
         try {
             _employees.value = Resource.Loading(emptyList())
             val response = employeeService.getEmployeeList()
