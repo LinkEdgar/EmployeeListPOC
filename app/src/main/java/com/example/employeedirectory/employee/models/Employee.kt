@@ -1,3 +1,13 @@
 package com.example.employeedirectory.employee.models
 
-data class Employee(val name : String, val uuid : String, val phoneNumber : String, val biography : String)
+data class Employee(
+    val biography: String,
+    val email_address: String,
+    val employee_type: String,
+    val full_name: String,
+    val phone_number: String,
+    val photo_url_large: String,
+    val photo_url_small: String,
+    val team: String,
+    val uuid: String
+    )
