@@ -18,7 +18,6 @@ class RetrofitClient @Inject constructor(
     }
 
     private fun okhttpClient(): OkHttpClient {
-        //todo only enable in debug
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BODY
         return OkHttpClient.Builder()
